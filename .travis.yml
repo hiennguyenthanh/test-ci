@@ -1,0 +1,21 @@
+language: android
+android:
+  components:
+    - tools
+    - build-tools-25.0.2
+    - android-25
+    - platform-tools
+    - extra-android-support # because I'm use support library
+    - extra-android-m2repository # because I'm use support library
+  licenses:
+    - '.+'
+
+sudo: required
+
+jdk:
+  - oraclejdk8
+
+install: true
+
+script:
+  - ./gradlew assembleRelease --stacktrace
