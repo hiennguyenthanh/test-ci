@@ -22,3 +22,16 @@ before_install:
 
 script:
   - ./gradlew assembleRelease --stacktrace
+
+deploy:
+  provider: releases
+  file: app/build/outputs/apk/app-release.apk
+  file_glob: "true"
+  skip_cleanup: true
+  on:
+    branch: master
+    repo: hiennguyenthanh/test-ci
+
+after_success:
+  - sh set_tags.sh
+
