@@ -166,6 +166,7 @@ public class MainActivityFragment extends Fragment {
         replaySubject.subscribe(x -> Log.e(TAG, "replaySubject: " + x));
     }
 
+
     //example using Observable.just()
     public void exampleJust(List<String> list) {
         Observable<List<String>> observable = Observable.just(list);
@@ -178,6 +179,7 @@ public class MainActivityFragment extends Fragment {
                 .map(String::toUpperCase)
                 .subscribe(s -> Log.e(TAG, "exampleFrom: " + s));
     }
+
 
     //Single only have 2 method onSuccess and onError
     public Single<List<String>> getString(List<String> listString) {
